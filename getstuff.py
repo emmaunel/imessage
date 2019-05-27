@@ -8,7 +8,7 @@ Gonna customize it later
 import requests
 import os
 import random
-from io import open as iopen
+from io import open
 
 headers = {'user-agent': 'reddit-{}'.format(os.environ.get('USER', 'cse-20289-sp19'))}
 
@@ -81,7 +81,7 @@ def save2Device(title, img):
     # Print title for text msg
     print('Title: {}'.format(title))
 
-    with iopen(file, 'wb') as file:
+    with open(file, 'wb') as file:
         file.write(res.content)
 
 
